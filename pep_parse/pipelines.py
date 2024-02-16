@@ -11,7 +11,7 @@ class PepParsePipeline:
     """Пайплайн для подсчета количества элементов с разными статусами и
     сохранения результатов в CSV-файл."""
 
-    def open_spider(self: 'PepParsePipeline', spider: 'PepParseSpider') -> None:
+    def open_spider(self: 'PepParsePipeline', spider) -> None:
         """
         Инициализирует счетчик статусов.
 
@@ -26,7 +26,7 @@ class PepParsePipeline:
     def process_item(
             self: 'PepParsePipeline',
             item: Dict[str, Any],
-            spider: 'PepParseSpider'
+            spider
     ) -> Dict[str, Any]:
         """
         Обрабатывает элемент и обновляет счетчик статусов.
@@ -43,7 +43,7 @@ class PepParsePipeline:
 
     def close_spider(
             self: 'PepParsePipeline',
-            spider: 'PepParseSpider'
+            spider
     ) -> None:
         """
         Создает CSV-файл с итоговой статистикой статусов.

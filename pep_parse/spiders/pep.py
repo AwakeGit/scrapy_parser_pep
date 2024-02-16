@@ -1,5 +1,5 @@
 import re
-from typing import Generator, List, Union, Any
+from typing import Generator, Union, Any
 from urllib.parse import urljoin
 
 import scrapy
@@ -17,7 +17,8 @@ class PepSpider(scrapy.Spider):
     start_urls: list[str] = ['https://peps.python.org/']
 
     def parse(self, response: scrapy.http.Response) -> Generator[
-        scrapy.Request, None, None]:
+        scrapy.Request, None, None
+    ]:
         """
         Обрабатывает ответ с главной страницы, содержащей список PEP.
 
@@ -37,7 +38,8 @@ class PepSpider(scrapy.Spider):
             )
 
     def parse_pep(self, response: scrapy.http.Response) -> Generator[
-        PepParseItem, None, None]:
+        PepParseItem, None, None
+    ]:
         """
         Обрабатывает ответ с отдельной страницы PEP.
 
