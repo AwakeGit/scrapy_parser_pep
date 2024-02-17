@@ -21,7 +21,7 @@ class PepParsePipeline:
         returns:
             None.
         """
-        self.status_counter: Dict[str, int] = defaultdict(lambda: 0)
+        self.status_counter: Dict[str, int] = defaultdict(int)
 
     def process_item(
             self: 'PepParsePipeline',
